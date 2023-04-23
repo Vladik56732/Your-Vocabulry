@@ -1,0 +1,36 @@
+.text {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+.front,
+.back {
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 10px black;
+    border: 1px solid black;
+    position: absolute;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    transition: 1.5s ease-in-out all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background-color: aquamarine;
+}
+.front {
+    transform: rotateX(0deg);
+}
+.text:hover .front {
+    transition: 1.5s ease-in-out all;
+    transform: rotateX(180deg);
+}
+.back {
+    transform: rotateX(180deg);
+}
+
+.text:hover .back {
+    transition: 1.5s ease-in-out all;
+    transform: rotateX(0deg);
+}

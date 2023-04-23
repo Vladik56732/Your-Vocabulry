@@ -15,11 +15,14 @@ const button = document.querySelector('.delete')
 button.addEventListener('click', () => {
     localStorage.clear()
     cards.innerHTML = ''
-    contentArray = []
+    base = []
 })
 
-for (let i = 0; base.length > i; i++) {
-    cards.innerHTML += `<div class="card"><p>${base[i].word}</p></div>`
+for (let i = 0; i < base.length; i++) {
+    cards.innerHTML += ` <div class="card">
+<div class="front">${base[i].word}</div>
+<div class="back">${base[i].translate}</div>
+</div>`
 }
 create.addEventListener('click', () => {
     if (word.value != '' && translate.value != '') {
@@ -28,7 +31,10 @@ create.addEventListener('click', () => {
             translation: translate.value,
         })
         console.log(base)
-        cards.innerHTML += `<div class="card"><p>${word.value}</p></div>`
+        cards.innerHTML += ` <div class="card">
+        <div class="front">${word.value}</div>
+        <div class="back">${translate.value}</div>
+        </div>`
         localStorage.setItem('base', JSON.stringify(base))
     }
 })

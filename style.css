@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 * {
-    font-family: 'Dongle', sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2em;
 }
 body {
     background-image: linear-gradient(to right, #061ce47b, #a506e47b);
@@ -10,16 +10,39 @@ body {
 .card {
     width: 200px;
     height: 200px;
+    position: relative;
+    margin-top: 15px;
+}
+.front,
+.back {
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 10px black;
+    border: 1px solid black;
+    position: absolute;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    transition: 1.5s ease-in-out all;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: linear;
-    overflow: hidden;
-    backface-visibility: hidden;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px #0101017b;
+    font-size: 2rem;
+    background-color: rgb(127, 168, 255);
+}
+.front {
+    transform: rotateX(0deg);
+}
+.card:hover .front {
+    transition: 1.5s ease-in-out all;
+    transform: rotateX(180deg);
+}
+.back {
+    transform: rotateX(180deg);
+}
+
+.card:hover .back {
+    transition: 1.5s ease-in-out all;
+    transform: rotateX(0deg);
 }
 .cards {
     display: flex;
